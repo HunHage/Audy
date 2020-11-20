@@ -1,5 +1,9 @@
 # Audy specific exclusions
 AudyConfig.properties
+Logs
+
+# target build files
+target
 
 ######################################
 # The Following is from toptotal.com #
