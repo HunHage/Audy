@@ -161,5 +161,13 @@
         </plugin>
       </plugins>
     </pluginManagement>
+
+<!-- Resources directory must be explicitly specified for exporting pom.xml properties to project.properties -->
+    <resources>
+      <resource>
+        <directory>src/main/resources/</directory>
+        <filtering>true</filtering>
+      </resource>
+    </resources>
   </build>
 </project>

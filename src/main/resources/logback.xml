@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+    <!--<logger name="discord4j.rest.traces" level="INFO"/>-->
+    <!--<property name="OUTPUT_FORMAT"  value="[%d{yyyy-MM-dd HH:mm:ss:SSS, UTC}] [%level] [%logger{0}] %msg%n" />-->
+    <property name="OUTPUT_FORMAT" value="%d{yyyy-MM-dd HH:mm:ss.SSS zzz, UTC} | %5level | %28.28logger{0} | %18.18thread | %msg%n"/>
+    <property name="WINDOW_FORMAT" value="%d{yyyy-MM-dd HH:mm:ss.SSS zzz, UTC} | %5level | %msg%n"/>
+    <property name="FN_FORMAT" value="Audy_%d{yyyy-MM-dd, UTC}"/>
+
+    <appender name="STD-OUT" class="ch.qos.logback.core.ConsoleAppender">
+        <filter class="ch.qos.logback.classic.filter.ThresholdFilter">
+            <level>DEBUG</level>
+        </filter>
+        <encoder>
+            <Pattern>${OUTPUT_FORMAT}</Pattern>
+        </encoder>
+    </appender>
+
+    <appender name="FILE-LOG-INFO" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <filter class="ch.qos.logback.classic.filter.ThresholdFilter">
+            <level>INFO</level>
+        </filter>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <!-- daily rollover -->
+            <fileNamePattern>Logs\${FN_FORMAT}_INFO.log</fileNamePattern>
+            <!-- keep 7 days worth of history -->
+            <maxHistory>7</maxHistory>
+        </rollingPolicy>
+        <encoder>
+            <charset>UTF-8</charset>
+            <pattern>${OUTPUT_FORMAT}</pattern>
+        </encoder>
+    </appender>
+
+    <appender name="FILE-LOG-DEBUG" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <filter class="ch.qos.logback.classic.filter.ThresholdFilter">
+            <level>DEBUG</level>
+        </filter>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <!-- daily rollover -->
+            <fileNamePattern>Logs\${FN_FORMAT}_DEBUG.log</fileNamePattern>
+            <!-- keep 7 days worth of history -->
+            <maxHistory>7</maxHistory>
+        </rollingPolicy>
+        <encoder>
+            <charset>UTF-8</charset>
+            <pattern>${OUTPUT_FORMAT}</pattern>
+        </encoder>
+    </appender>
+
+    <appender name="FILE-LOG-WARN" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <filter class="ch.qos.logback.classic.filter.ThresholdFilter">
+            <level>WARN</level>
+        </filter>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <!-- daily rollover -->
+            <fileNamePattern>Logs\${FN_FORMAT}_WARN.log</fileNamePattern>
+            <!-- keep 7 days worth of history -->
+            <maxHistory>7</maxHistory>
+        </rollingPolicy>
+        <encoder>
+            <charset>UTF-8</charset>
+            <pattern>${OUTPUT_FORMAT}</pattern>
+        </encoder>
+    </appender>
+
+    <root level="ALL">
+        <appender-ref ref="STD-OUT" />
+        <appender-ref ref="FILE-LOG-INFO" />
+        <appender-ref ref="FILE-LOG-DEBUG" />
+        <appender-ref ref="FILE-LOG-WARN" />
+    </root>
+
+</configuration>
