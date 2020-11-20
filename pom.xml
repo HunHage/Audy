@@ -15,19 +15,44 @@
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <maven.compiler.source>1.8</maven.compiler.source>
     <maven.compiler.target>1.8</maven.compiler.target>
+<!-- Discord Libraries -->
+    <Discord4JVersion>3.1.1</Discord4JVersion>
+<!-- File/Logging Libraries -->
+    <LogbackClassicVersion>1.2.3</LogbackClassicVersion>
+<!-- Misc. Libraries -->
+    <JodaTimeVersion>2.10.5</JodaTimeVersion>
+    <JUnit4Version>4.11</JUnit4Version>
   </properties>
 
   <dependencies>
+<!-- Discord Libraries -->
+    <dependency>
+      <groupId>com.discord4j</groupId>
+      <artifactId>discord4j-core</artifactId>
+      <version>${Discord4JVersion}</version>
+    </dependency>
+<!-- File/Logging Libraries -->
+    <dependency>
+      <groupId>ch.qos.logback</groupId>
+      <artifactId>logback-classic</artifactId>
+      <version>${LogbackClassicVersion}</version>
+    </dependency>
+<!-- Misc. Libraries -->
+    <dependency>
+      <groupId>joda-time</groupId>
+      <artifactId>joda-time</artifactId>
+      <version>${JodaTimeVersion}</version>
+    </dependency>
     <dependency>
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
-      <version>4.11</version>
+      <version>${JUnit4Version}</version>
       <scope>test</scope>
     </dependency>
   </dependencies>
 
   <build>
-    <pluginManagement><!-- lock down plugins versions to avoid using Maven defaults (may be moved to parent pom) -->
+    <pluginManagement>
       <plugins>
         <!-- clean lifecycle, see https://maven.apache.org/ref/current/maven-core/lifecycles.html#clean_Lifecycle -->
         <plugin>
@@ -39,10 +64,76 @@
           <artifactId>maven-resources-plugin</artifactId>
           <version>3.0.2</version>
         </plugin>
+<!--        -->
+<!--     Custom Build Entries   -->
+<!--        -->
         <plugin>
           <artifactId>maven-compiler-plugin</artifactId>
           <version>3.8.0</version>
+          <configuration>
+            <source>1.8</source>
+            <target>1.8</target>
+          </configuration>
         </plugin>
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-assembly-plugin</artifactId>
+          <version>3.3.0</version>
+          <configuration>
+            <descriptorRefs>
+              <descriptorRef>jar-with-dependencies</descriptorRef>
+            </descriptorRefs>
+            <archive>
+              <manifest>
+                <addClasspath>true</addClasspath>
+                <mainClass>net.exploitables.Audy.main</mainClass>
+              </manifest>
+            </archive>
+          </configuration>
+          <executions>
+            <execution>
+              <id>make-assembly</id>
+              <phase>package</phase>
+              <goals>
+                <goal>single</goal>
+              </goals>
+            </execution>
+          </executions>
+        </plugin>
+        <plugin>
+          <artifactId>maven-dependency-plugin</artifactId>
+          <executions>
+            <execution>
+              <phase>process-sources</phase>
+              <goals>
+                <goal>copy-dependencies</goal>
+              </goals>
+              <configuration>
+                <outputDirectory>target/lib</outputDirectory>
+              </configuration>
+            </execution>
+          </executions>
+        </plugin>
+<!--     Write properties of pom.xml to properties file-->
+        <plugin>
+          <groupId>org.codehaus.mojo</groupId>
+          <artifactId>properties-maven-plugin</artifactId>
+          <version>1.0.0</version>
+          <executions>
+            <execution>
+              <phase>generate-resources</phase>
+              <goals>
+                <goal>write-project-properties</goal>
+              </goals>
+              <configuration>
+                <outputFile>${project.build.outputDirectory}/project.properties</outputFile>
+              </configuration>
+            </execution>
+          </executions>
+        </plugin>
+<!--        -->
+<!--     End Custom Build Entries   -->
+<!--        -->
         <plugin>
           <artifactId>maven-surefire-plugin</artifactId>
           <version>2.22.1</version>
