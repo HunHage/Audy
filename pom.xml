@@ -21,7 +21,6 @@
     <LogbackClassicVersion>1.2.3</LogbackClassicVersion>
 <!--SQL Libraries-->
     <JDBIVersion>3.17.0</JDBIVersion>
-    <HibernateVersion>5.4.10.Final</HibernateVersion>
     <HikariCPVerison>3.4.5</HikariCPVerison>
     <PostgreSQLDriverVersion>42.2.5</PostgreSQLDriverVersion>
     <FlywayVersion>7.2.1</FlywayVersion>
@@ -48,16 +47,6 @@
       <groupId>org.jdbi</groupId>
       <artifactId>jdbi3-core</artifactId>
       <version>${JDBIVersion}</version>
-    </dependency>
-    <dependency>
-      <groupId>org.hibernate</groupId>
-      <artifactId>hibernate-core</artifactId>
-      <version>${HibernateVersion}</version>
-    </dependency>
-    <dependency>
-      <groupId>org.hibernate</groupId>
-      <artifactId>hibernate-hikaricp</artifactId>
-      <version>${HibernateVersion}</version>
     </dependency>
     <dependency>
       <groupId>com.zaxxer</groupId>
