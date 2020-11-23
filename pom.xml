@@ -25,7 +25,6 @@
     <HikariCPVerison>3.4.5</HikariCPVerison>
     <PostgreSQLDriverVersion>42.2.5</PostgreSQLDriverVersion>
     <FlywayVersion>7.2.1</FlywayVersion>
-    <H2DatabaseVersion>1.4.197</H2DatabaseVersion>
 <!--Misc. Libraries-->
     <JodaTimeVersion>2.10.5</JodaTimeVersion>
     <JUnit4Version>4.11</JUnit4Version>
@@ -74,11 +73,6 @@
       <groupId>org.flywaydb</groupId>
       <artifactId>flyway-core</artifactId>
       <version>${FlywayVersion}</version>
-    </dependency>
-    <dependency>
-      <groupId>com.h2database</groupId>
-      <artifactId>h2</artifactId>
-      <version>${H2DatabaseVersion}</version>
     </dependency>
 <!--Misc. Libraries-->
     <dependency>
