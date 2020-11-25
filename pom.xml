@@ -26,7 +26,7 @@
     <FlywayVersion>7.2.1</FlywayVersion>
 <!--Misc. Libraries-->
     <JodaTimeVersion>2.10.5</JodaTimeVersion>
-    <JUnit4Version>4.11</JUnit4Version>
+    <JUnit4Version>4.13.1</JUnit4Version>
   </properties>
 
   <dependencies>
