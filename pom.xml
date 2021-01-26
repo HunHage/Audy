@@ -19,6 +19,9 @@
     <Discord4JVersion>3.1.1</Discord4JVersion>
 <!--File/Logging Libraries-->
     <LogbackClassicVersion>1.2.3</LogbackClassicVersion>
+    <ApacheCommonsCodecVersion>1.15</ApacheCommonsCodecVersion>
+<!--Network Libraries-->
+    <ApacheCommonsHttpClientVersion>4.5.6</ApacheCommonsHttpClientVersion>
 <!--SQL Libraries-->
     <JDBIVersion>3.17.0</JDBIVersion>
     <HikariCPVerison>3.4.5</HikariCPVerison>
@@ -41,6 +44,17 @@
       <groupId>ch.qos.logback</groupId>
       <artifactId>logback-classic</artifactId>
       <version>${LogbackClassicVersion}</version>
+    </dependency>
+    <dependency>
+      <groupId>commons-codec</groupId>
+      <artifactId>commons-codec</artifactId>
+      <version>${ApacheCommonsCodecVersion}</version>
+    </dependency>
+    <!--Network Libraries-->
+    <dependency>
+      <groupId>org.apache.httpcomponents</groupId>
+      <artifactId>httpclient</artifactId>
+      <version>${ApacheCommonsHttpClientVersion}</version>
     </dependency>
 <!--SQL Libraries-->
     <dependency>
