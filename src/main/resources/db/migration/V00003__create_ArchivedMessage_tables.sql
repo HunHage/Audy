@@ -18,7 +18,8 @@ CREATE TABLE tbl_message_contents (
     content varchar NOT NULL,
     timestamp bigint NOT NULL,
     linked_files varchar(32)[],
-    PRIMARY KEY (pk_uuid)
+    PRIMARY KEY (pk_uuid),
+    CONSTRAINT fk_message_id FOREIGN KEY(message_id) REFERENCES tbl_messages(pk_id)
 );
 
 CREATE TABLE tbl_message_attachments (

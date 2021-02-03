@@ -29,6 +29,7 @@
     <FlywayVersion>7.2.1</FlywayVersion>
 <!--Misc. Libraries-->
     <JodaTimeVersion>2.10.5</JodaTimeVersion>
+    <QuartzSchedulerVersion>2.3.2</QuartzSchedulerVersion>
     <JUnit4Version>4.13.1</JUnit4Version>
   </properties>
 
@@ -82,6 +83,11 @@
       <groupId>joda-time</groupId>
       <artifactId>joda-time</artifactId>
       <version>${JodaTimeVersion}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.quartz-scheduler</groupId>
+      <artifactId>quartz</artifactId>
+      <version>${QuartzSchedulerVersion}</version>
     </dependency>
     <dependency>
       <groupId>junit</groupId>
