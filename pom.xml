@@ -16,7 +16,7 @@
     <maven.compiler.source>1.8</maven.compiler.source>
     <maven.compiler.target>1.8</maven.compiler.target>
 <!--Discord Libraries-->
-    <Discord4JVersion>3.1.1</Discord4JVersion>
+    <Discord4JVersion>3.1.3</Discord4JVersion>
 <!--File/Logging Libraries-->
     <LogbackClassicVersion>1.2.3</LogbackClassicVersion>
     <ApacheCommonsCodecVersion>1.15</ApacheCommonsCodecVersion>
