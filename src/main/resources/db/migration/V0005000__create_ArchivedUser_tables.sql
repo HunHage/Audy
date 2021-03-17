@@ -15,5 +15,5 @@ CREATE TABLE tbl_user_history (
     discriminator varchar(4),
     avatar_md5 varchar(32),
     avatar_name text,
-    FOREIGN KEY (user_id) REFERENCES tbl_user_history_latest(pk_user_id)
+    CONSTRAINT fk_user_id FOREIGN KEY (user_id) REFERENCES tbl_user_history_latest(pk_user_id)
 );
