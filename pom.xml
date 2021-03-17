@@ -113,6 +113,22 @@
   </dependencies>
 
   <build>
+<!--Add AudyMain to the manifest to make the JAR executable-->
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-jar-plugin</artifactId>
+        <configuration>
+          <archive>
+            <manifest>
+              <addClasspath>true</addClasspath>
+              <mainClass>net.exploitables.audy.AudyMain</mainClass>
+            </manifest>
+          </archive>
+        </configuration>
+      </plugin>
+    </plugins>
+
     <pluginManagement>
       <plugins>
         <!-- clean lifecycle, see https://maven.apache.org/ref/current/maven-core/lifecycles.html#clean_Lifecycle -->
@@ -147,7 +163,7 @@
             <archive>
               <manifest>
                 <addClasspath>true</addClasspath>
-                <mainClass>net.exploitables.audy.main</mainClass>
+                <mainClass>net.exploitables.audy.AudyMain</mainClass>
               </manifest>
             </archive>
           </configuration>
