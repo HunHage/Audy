@@ -1,5 +1,6 @@
 CREATE TABLE tbl_user_history_latest (
     user_id bigint UNIQUE NOT NULL,
+    timestamp bigint NOT NULL,
     username text NOT NULL,
     discriminator varchar(4) NOT NULL,
     avatar_md5 varchar(32),
