@@ -3,8 +3,8 @@ CREATE TABLE tbl_user_history_latest (
     timestamp bigint NOT NULL,
     username text NOT NULL,
     discriminator varchar(4) NOT NULL,
-    avatar_md5 varchar(32),
-    avatar_name text,
+    avatar_md5 varchar(32) NOT NULL,
+    avatar_name text NOT NULL,
     PRIMARY KEY (user_id)
 );
 
