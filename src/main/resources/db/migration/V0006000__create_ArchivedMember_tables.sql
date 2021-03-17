@@ -11,5 +11,5 @@ CREATE TABLE tbl_member_history (
     guild_id bigint NOT NULL,
     timestamp bigint NOT NULL,
     nickname text,
-    FOREIGN KEY (guild_id) REFERENCES tbl_guild_config(guild_id)
+    FOREIGN KEY (guild_id) REFERENCES tbl_guild_config(pk_guild_id)
 );
