@@ -45,6 +45,7 @@
 <!--Misc. Libraries-->
     <JodaTimeVersion>2.10.5</JodaTimeVersion>
     <QuartzSchedulerVersion>2.3.2</QuartzSchedulerVersion>
+<!--Testing Libraries-->
     <JUnit4Version>4.13.1</JUnit4Version>
   </properties>
 
@@ -66,7 +67,7 @@
       <artifactId>commons-codec</artifactId>
       <version>${ApacheCommonsCodecVersion}</version>
     </dependency>
-    <!--Network Libraries-->
+<!--Network Libraries-->
     <dependency>
       <groupId>org.apache.httpcomponents</groupId>
       <artifactId>httpclient</artifactId>
@@ -104,6 +105,7 @@
       <artifactId>quartz</artifactId>
       <version>${QuartzSchedulerVersion}</version>
     </dependency>
+<!--Testing Libraries-->
     <dependency>
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
