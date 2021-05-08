@@ -12,26 +12,26 @@
   <url>http://www.exploitables.net/Audy</url>
 
 <!--SonaType repo for snapshots of D4J, don't uncomment for releases-->
-  <repositories>
-    <repository>
-      <id>oss.sonatype.org-snapshot</id>
-      <url>http://oss.sonatype.org/content/repositories/snapshots</url>
-      <snapshots>
-        <enabled>true</enabled>
-      </snapshots>
-    </repository>
-    <repository>
-      <id>repo.spring.io-milestone</id>
-      <url>https://repo.spring.io/milestone</url>
-    </repository>
-  </repositories>
+<!--  <repositories>-->
+<!--    <repository>-->
+<!--      <id>oss.sonatype.org-snapshot</id>-->
+<!--      <url>http://oss.sonatype.org/content/repositories/snapshots</url>-->
+<!--      <snapshots>-->
+<!--        <enabled>true</enabled>-->
+<!--      </snapshots>-->
+<!--    </repository>-->
+<!--    <repository>-->
+<!--      <id>repo.spring.io-milestone</id>-->
+<!--      <url>https://repo.spring.io/milestone</url>-->
+<!--    </repository>-->
+<!--  </repositories>-->
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <maven.compiler.source>1.8</maven.compiler.source>
     <maven.compiler.target>1.8</maven.compiler.target>
 <!--Discord Libraries-->
-    <Discord4JVersion>3.1.4-SNAPSHOT</Discord4JVersion>
+    <Discord4JVersion>3.1.5</Discord4JVersion>
 <!--File/Logging Libraries-->
     <LogbackClassicVersion>1.2.3</LogbackClassicVersion>
     <ApacheCommonsCodecVersion>1.15</ApacheCommonsCodecVersion>
